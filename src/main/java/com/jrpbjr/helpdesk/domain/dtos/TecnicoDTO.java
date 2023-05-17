@@ -28,7 +28,7 @@ public class TecnicoDTO implements Serializable{
 	
 	public TecnicoDTO() {
 		super();
-		// TODO Auto-generated constructor stub
+		addPerfil(Perfil.CLIENTE);
 	}
 
 	public TecnicoDTO(Tecnico obj) {
@@ -40,7 +40,7 @@ public class TecnicoDTO implements Serializable{
 		this.senha = obj.getSenha();
 		this.perfil = obj.getPerfil().stream().map(x -> x.getCodigo()).collect(Collectors.toSet());
 		this.dataCriacao = obj.getDataCriacao();
-		
+		addPerfil(Perfil.CLIENTE);
 	}
 
 	public Integer getId() {
